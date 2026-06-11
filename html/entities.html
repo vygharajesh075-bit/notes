@@ -1,0 +1,59 @@
+<!-- <🧩
+
+🧠 What are HTML Entities?
+
+HTML entities = special codes used to display reserved or special characters
+
+Why?
+Because some characters are already used by HTML itself. -->
+<!-- <p>5 < 10</p> --> -->
+ <!-- Browser gets confused (thinks < is a tag)
+
+✅ Solution using entities
+<p>5 &lt; 10</p>
+
+👉 Output: 5 < 10 -->
+<!-- | Character | Entity   | Meaning            |
+| --------- | -------- | ------------------ |
+| `<`       | `&lt;`   | less than          |
+| `>`       | `&gt;`   | greater than       |
+| `&`       | `&amp;`  | ampersand          |
+| `"`       | `&quot;` | double quote       |
+| `'`       | `&apos;` | single quote       |
+| space     | `&nbsp;` | non-breaking space | -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Entities Demo</title>
+</head>
+
+<body>
+
+  <h1>HTML Entities Examples</h1>
+
+  <h2>1. Special Characters</h2>
+  <p>Less than: 5 &lt; 10</p>
+  <p>Greater than: 10 &gt; 5</p>
+  <p>Ampersand: This &amp; that</p>
+  <p>Quotes: &quot;Hello World&quot;</p>
+  <p>Apostrophe: It&apos;s great</p>
+
+  <h2>2. Extra Spaces</h2>
+  <p>Hello&nbsp;&nbsp;&nbsp;World (using non-breaking spaces)</p>
+
+  <h2>3. Symbols</h2>
+  <p>Copyright: &copy; 2026</p>
+  <p>Registered: &reg;</p>
+  <p>Trademark: &trade;</p>
+
+  <h2>4. Currency Symbols</h2>
+  <p>Rupee: &#8377; 500</p>
+  <p>Dollar: $100</p>
+
+  <h2>5. Showing HTML Code (important!)</h2>
+  <p>Use &lt;div&gt; to create containers</p>
+  <p>Use &lt;h1&gt; for headings</p>
+
+</body>
+</html>
