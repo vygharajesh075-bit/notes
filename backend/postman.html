@@ -1,0 +1,168 @@
+<!-- Postman: Complete Detailed Guide
+What is Postman?
+
+Postman is an API testing tool.
+
+It allows you to send HTTP requests to a server and inspect the responses without creating a frontend.
+
+Imagine you have an Express server:
+
+app.get("/users", (req, res) => {
+    res.send("Users data");
+});
+
+Normally:
+
+Browser → Server
+
+With Postman:
+
+Postman → Server
+
+Postman acts like a client.
+
+Why was Postman created?
+
+Suppose you're building a backend.
+
+You want to test:
+
+GET request
+POST request
+PUT request
+DELETE request
+Headers
+Cookies
+Authentication
+JSON data
+
+Building a frontend every time would be slow.
+
+Postman lets you test directly.
+
+Anatomy of Postman
+
+When you open Postman you'll see:
+
+------------------------------------------------
+| Method | URL                               |
+------------------------------------------------
+| GET    | http://localhost:3000/users       |
+------------------------------------------------
+Method Dropdown
+
+Contains:
+
+GET
+POST
+PUT
+PATCH
+DELETE
+HEAD
+OPTIONS
+URL Box
+
+Contains API endpoint.
+
+Example:
+
+http://localhost:3000/users
+Send Button
+
+Sends request to server.
+
+What happens internally?
+
+Suppose:
+
+GET http://localhost:3000/users
+
+When you click Send:
+
+Step 1
+
+Postman creates HTTP request.
+
+GET /users HTTP/1.1
+Step 2
+
+Request reaches server.
+
+Node.js Server
+Step 3
+
+Express route executes.
+
+app.get("/users", (req,res)=>{
+   res.send("Users List");
+})
+Step 4
+
+Server sends response.
+
+Users List
+Step 5
+
+Postman displays response.
+
+GET Request
+
+Used for retrieving data.
+
+Example:
+
+app.get("/student", (req,res)=>{
+    res.send("Student Data");
+})
+
+Postman:
+
+GET
+http://localhost:3000/student
+
+Response:
+
+Student Data
+
+No body required.
+
+POST Request
+
+Used to send data.
+
+Example:
+
+app.use(express.json());
+
+app.post("/student",(req,res)=>{
+    console.log(req.body);
+    res.send("Added");
+})
+
+Postman:
+
+Method:
+
+POST
+
+URL:
+
+http://localhost:3000/student
+
+Body:
+
+{
+   "name":"Vygha",
+   "age":18
+}
+
+Response:
+
+Added
+
+Server Console:
+
+{
+  name: 'Vygha',
+  age: 18
+} -->

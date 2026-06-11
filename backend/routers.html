@@ -1,0 +1,117 @@
+<!-- Routers in Express are like mini traffic control rooms inside your server 🚦.
+Instead of dumping all routes into one file, you split them into clean, organized modules.
+
+Let’s build this from zero to mastery.
+
+🧠 What is a Router?
+
+In Express.js:
+
+const router = express.Router();
+
+This creates a mini app that handles routes.
+
+Instead of:
+
+app.get("/user", ...)
+app.post("/user", ...)
+app.get("/product", ...)
+
+You separate them:
+
+routes/
+ ├── user.js
+ └── product.js
+🚦 Why use Router?
+
+Without router = messy jungle 🌴
+
+With router = organized city 🏙️
+
+Benefits:
+Clean code
+Easy to scale
+Separate logic (users, products, auth)
+Industry standard
+📦 Basic Router Example
+Step 1: Create router file
+📄 routes/user.js
+const express = require("express");
+const router = express.Router();
+
+// GET request
+router.get("/", (req, res) => {
+    res.send("All users");
+});
+
+// POST request
+router.post("/login", (req, res) => {
+    res.send("User login");
+});
+
+module.exports = router;
+Step 2: Use router in main file
+📄 server.js
+const express = require("express");
+const app = express();
+
+const userRouter = require("./routes/user");
+
+// use router
+app.use("/user", userRouter);
+
+app.listen(3000);
+🔗 Final Routes
+URL	Method	Output
+/user/	GET	All users
+/user/login	POST	User login
+
+Notice:
+
+app.use("/user", userRouter);
+
+automatically adds /user prefix.
+
+🧩 How Router Works Internally
+
+Think:
+
+Incoming Request
+      ↓
+app.use("/user", router)
+      ↓
+router checks path
+      ↓
+matching route runs
+🛠️ Multiple Routers Example
+routes/
+ ├── user.js
+ ├── product.js
+ └── auth.js
+server.js
+app.use("/user", require("./routes/user"));
+app.use("/product", require("./routes/product"));
+app.use("/auth", require("./routes/auth")); -->
+const express = require("express");
+const router = express.Router();
+
+// GET request
+router.get("/", (req, res) => {
+    res.send("All users");
+});
+
+// POST request
+router.post("/login", (req, res) => {
+    res.send("User login");
+});
+
+module.exports = router;
+const express = require("express");
+const app = express();
+
+const userRouter = require("./routes/user");
+
+// use router
+app.use("/user", userRouter);
+
+app.listen(3000);

@@ -1,0 +1,292 @@
+
+
+
+Claim offer
+
+This code is the frontend talking to your Express backend.
+
+Think of it as a courier service 📦:
+
+fetch() = sending a package
+
+Backend (/login) = receiving the package
+
+res.json() = opening the reply package
+
+console.log() = reading the reply
+
+Let's go line by line.
+
+fetch("http://localhost:3000/login", {
+What is fetch()?
+fetch() is a browser function used to send HTTP requests.
+
+Here you're sending a request to:
+
+http://localhost:3000/login
+which matches this Express route:
+
+app.post("/login", ...)
+method: "POST",
+Why specify POST?
+By default, fetch() sends a GET request.
+
+fetch("/login")
+means:
+
+GET /login
+But your server expects:
+
+app.post("/login")
+So you must write:
+
+method: "POST"
+which sends:
+
+POST /login
+headers: {
+    "Content-Type": "application/json"
+},
+What are headers?
+Headers are extra information sent with the request.
+
+Like a label on a parcel:
+
+Content-Type: application/json
+tells the server:
+
+"The data I'm sending is JSON."
+
+Without this, Express may not correctly understand the body.
+
+body: JSON.stringify({
+    username: "Vygha"
+})
+What is the body?
+The body contains the actual data being sent.
+
+You want to send:
+
+{
+    username: "Vygha"
+}
+But HTTP requests send text.
+
+So we convert the object into JSON text.
+
+Before stringify
+{
+    username: "Vygha"
+}
+JavaScript object.
+
+After stringify
+JSON.stringify({
+    username: "Vygha"
+})
+becomes:
+
+'{"username":"Vygha"}'
+This string is sent to the server.
+
+What does the server receive?
+Because of:
+
+app.use(express.json());
+Express converts:
+
+'{"username":"Vygha"}'
+back into:
+
+{
+    username: "Vygha"
+}
+So:
+
+req.body
+becomes:
+
+{
+    username: "Vygha"
+}
+The request is sent
+At this point the browser sends:
+
+POST /login
+
+Headers:
+Content-Type: application/json
+
+Body:
+{
+   "username":"Vygha"
+}
+Server executes
+app.post("/login", (req, res) => {
+    const { username } = req.body;
+
+    res.json({
+        message: `Welcome ${username}`
+    });
+});
+Server sends back:
+
+{
+   "message":"Welcome Vygha"
+}
+.then(res => res.json())
+What is res here?
+This res is NOT Express's response object.
+
+Many beginners get confused.
+
+Backend:
+
+(req, res)
+Frontend:
+
+.then(res => ...)
+They are different variables.
+
+Here:
+
+res
+contains the server's response.
+
+Something like:
+
+Response {
+  status: 200,
+  ok: true,
+  ...
+}
+Why res.json()?
+The response body contains JSON text:
+
+{
+   "message":"Welcome Vygha"
+}
+res.json() converts it into a JavaScript object.
+
+After conversion:
+
+{
+   message: "Welcome Vygha"
+}
+.then(data => console.log(data));
+Now:
+
+data
+contains:
+
+{
+   message: "Welcome Vygha"
+}
+So:
+
+console.log(data);
+prints:
+
+{
+   message: "Welcome Vygha"
+}
+in the browser console.
+
+Full Flow
+Browser
+   |
+   | fetch()
+   v
+POST /login
+{
+  username: "Vygha"
+}
+   |
+   v
+Express Server
+   |
+   | req.body.username
+   | = "Vygha"
+   |
+   v
+Response
+{
+  message: "Welcome Vygha"
+}
+   |
+   v
+res.json()
+   |
+   v
+{
+  message: "Welcome Vygha"
+}
+   |
+   v
+console.log(data)
+Interview-style explanation
+fetch(...)
+returns a Promise.
+
+Send POST request.
+
+Wait for server response.
+
+Convert response JSON using res.json().
+
+Receive JavaScript object in the next .then().
+
+Use the data (console.log, update UI, etc.).
+
+This pattern appears everywhere in frontend development, whether you're using vanilla JavaScript, React, Angular, or Vue.
+
+
+That.then is compulsaru
+
+.then() is not compulsory, but you need some way to handle the Promise returned by fetch().
+
+fetch() returns a Promise:
+
+const result = fetch("http://localhost:3000/login");
+console.log(result);
+Output:
+
+Promise { <pending> }
+The request takes time, so JavaScript doesn't immediately have the response.
+
+Option 1: Using .then()
+fetch("http://localhost:3000/login")
+    .then(res => res.json())
+    .then(data => console.log(data));
+This is the traditional Promise style.
+
+Option 2: Using async/await
+async function login() {
+    const res = await fetch("http://localhost:3000/login");
+    const data = await res.json();
+
+    console.log(data);
+}
+
+login();
+Many developers find this easier to read.
+
+What happens if you don't use either?
+const data = fetch("http://localhost:3000/login");
+console.log(data);
+You'll get:
+
+Promise { <pending> }
+not the actual response data.
+
+So the rule is:
+
+❌ Not compulsory to use .then()
+
+✅ Compulsory to handle the Promise somehow (.then() or await)
+
+Think of fetch() like ordering food online 🍕. You don't get the pizza instantly. The Promise is the receipt saying, "Your order is being processed." .then() or await is how you wait for the pizza to arrive.
+
+
+
+
