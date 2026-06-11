@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Grid Full Properties Demo</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+/* 🧠 GRID CONTAINER (FULL CONTROL PANEL) */
+.container {
+  display: grid;
+
+  /* 🔷 GRID STRUCTURE */
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px 150px 100px;
+
+  /* 🔷 SPACING */
+  gap: 10px;
+
+  /* 🔷 WHOLE GRID ALIGNMENT (inside page) */
+  justify-content: center;   /* left/right movement of grid */
+  align-content: center;     /* top/bottom movement of grid */
+
+  /* 🔷 ITEM ALIGNMENT INSIDE CELLS */
+  justify-items: center;     /* horizontal inside cell */
+  align-items: center;       /* vertical inside cell */
+
+  height: 100vh;
+  padding: 10px;
+}
+
+/* 🧱 GRID ITEMS */
+.box {
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 ITEM POSITIONING (VERY IMPORTANT PART) */
+
+/* Box 1: spans multiple columns + rows */
+.box1 {
+  grid-column: 1 / 3;  /* start col 1 → end col 3 */
+  grid-row: 1 / 2;     /* row 1 only */
+}
+
+/* Box 2 */
+.box2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+/* Box 3 */
+.box3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+/* Box 4 */
+.box4 {
+  grid-area: 2 / 2 / 3 / 3; /* row-start / col-start / row-end / col-end */
+}
+
+/* Box 5 */
+.box5 {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+/* 🔥 OPTIONAL ADVANCED ALIGNMENT PER ITEM */
+.box1 { justify-self: start; }
+.box2 { align-self: end; }
+.box3 { justify-self: end; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+  <div class="box box4">4</div>
+  <div class="box box5">5</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dudu Restaurant</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Roboto Slab", serif;
+    background: linear-gradient(to right,#00c6ff,#0072ff);
+    color:#333;
+}
+
+header{
+    text-align:center;
+    padding:20px;
+    background:white;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+header p{
+    color:gray;
+}
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:15px;
+    background:#222;
+}
+
+.navbar span{
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    background:linear-gradient(to right,lightgreen,aqua);
+}
+.navbar:hover{
+    transform:scale(1.05)
+}
+
+.container{
+    padding:20px;
+}
+
+.section-title{
+    text-align:center;
+    margin:20px 0;
+    color:maroon;
+}
+
+.food-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    width:220px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card h4{
+    margin:10px 0;
+}
+
+.review-section{
+    text-align:center;
+    margin-top:30px;
+}
+
+form{
+    margin-top:30px;
+    text-align:center;
+}
+
+input, textarea{
+    width:80%;
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
+    border:none;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+footer{
+    margin-top:40px;
+    background:#111;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+footer table{
+    margin:auto;
+    margin-top:10px;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Dudu Restaurant</h1>
+    <p>Most trusted and efficient food spot</p>
+</header>
+
+<div class="navbar">
+    <span>Items</span>
+    <span>Prices</span>
+    <span>Reviews</span>
+    <span>Contact</span>
+</div>
+
+<div class="container">
+
+<h2 class="section-title">Most Demanding Items</h2>
+
+<div class="food-grid">
+
+<div class="card">
+    <img src="https://source.unsplash.com/300x200/?shawarma" alt="Shawarma">
+    <h4>Shawarma</h4>
+    <p>₹120</p>
+</div>
+
+<div class="card">
+    <img src="https://source.unsplash.com/300x200/?biryani" alt="Biryani">
+    <h4>Thalassery Biryani</h4>
+    <p>₹180</p>
+</div>
+
+<div class="card">
+    <img src="https://source.unsplash.com/300x200/?pizza" alt="Pizza">
+    <h4>Loaded Pizza</h4>
+    <p>₹250</p>
+</div>
+
+<div class="card">
+    <img src="https://source.unsplash.com/300x200/?burger" alt="Burger">
+    <h4>Burger</h4>
+    <p>₹150</p>
+</div>
+
+</div>
+
+<div class="review-section">
+    <h2 class="section-title">Reviews</h2>
+    <audio controls src="your-audio.mp3"></audio>
+    <br><br>
+    <video width="300" controls src="your-video.mp4"></video>
+</div>
+
+<form>
+    <h2 class="section-title">Give Your Feedback</h2>
+    <input type="text" placeholder="Enter your suggestion">
+    <textarea rows="4" placeholder="More feedback..."></textarea>
+    <br>
+    <button>Submit</button>
+</form>
+
+</div>
+
+<footer>
+    <p>Thank you for visiting 🍽️</p>
+
+    <h4>Contact</h4>
+    <table>
+        <tr>
+            <th>Owner</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <td>Dudu</td>
+            <td>668799789</td>
+        </tr>
+    </table>
+
+    <p>&copy; 2026 Dudu Restaurant</p>
+</footer>
+
+</body>
+</html>

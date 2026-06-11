@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+h1 {
+    color: green;
+}
+
+.external-box {
+    background-color: yellow;
+    padding: 15px;
+    border: 3px dashed black;
+}

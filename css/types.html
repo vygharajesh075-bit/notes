@@ -1,0 +1,122 @@
+<!-- You apply CSS directly inside an HTML tag.
+
+<h1 style="color: red; font-size: 20px;">Hello</h1>
+🧠 Idea:
+
+Style is glued to that specific element.
+
+👍 Pros:
+Quick and easy for small changes
+No need for separate file
+👎 Cons:
+Messy code
+No reuse (you repeat styles again and again)
+Hard to maintain
+🔹 2. Internal CSS (Style inside <style> tag)
+
+You write CSS inside the <head> section of the same HTML file.
+
+<head>
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+</head>
+🧠 Idea:
+
+Styles apply to the whole page, but live inside that page only.
+
+👍 Pros:
+Cleaner than inline
+Good for single-page projects
+👎 Cons:
+Not reusable across multiple pages
+Still mixes HTML + CSS in one file
+🔹 3. External CSS (Separate file)
+
+You create a .css file and link it.
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+style.css
+
+h1 {
+  color: green;
+}
+🧠 Idea:
+
+All styling lives in a separate “style brain” 🧠
+
+🌟 Why External CSS is the BEST (big advantage)
+
+External CSS isn’t just better — it’s like upgrading from a bicycle to a metro system 🚇
+
+🚀 Key Advantages:
+Reusability → One CSS file can style MANY pages
+Clean code → HTML stays neat, CSS stays separate
+Easy maintenance → Change once → updates everywhere
+Faster websites → Browser caches CSS file
+Team-friendly → Developers can work separately (HTML vs CSS)
+
+👉 Example:
+If you have 10 pages and want to change button color:
+
+Inline → change 100 times 😵
+Internal → change 10 times 😐
+External → change 1 time 😎
+⚔️ Difference Summary
+Feature	Inline CSS 🟥	Internal CSS 🟨	External CSS 🟩
+Location	Inside tag	Inside <style>	Separate file
+Reusability	❌ None	❌ Limited	✅ High
+Cleanliness	❌ Messy	⚠️ Medium	✅ Clean
+Performance	❌ Poor	⚠️ Okay	✅ Best
+Use Case	Small fixes	Single page	Real projects -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Types Demo</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: blue;
+            text-align: center;
+        }
+
+        .internal-box {
+            background-color: lightgray;
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Types Example</h1>
+
+    <!-- Inline CSS -->
+    <p style="color: red; font-size: 18px;">
+        This paragraph uses INLINE CSS
+    </p>
+
+    <!-- Internal CSS -->
+    <div class="internal-box">
+        <h2>This is styled using INTERNAL CSS</h2>
+    </div>
+
+    <!-- External CSS -->
+    <div class="external-box">
+        <h3>This is styled using EXTERNAL CSS</h3>
+    </div>
+
+</body>
+</html>

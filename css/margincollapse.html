@@ -1,0 +1,103 @@
+<!-- Margin collapse is a CSS behavior where vertical margins don’t add up between elements — instead, they merge into a single margin.
+
+Think of two waves meeting 🌊🌊 → instead of stacking height, the bigger wave wins.
+
+📌 Simple rule
+
+When two vertical margins meet:
+
+👉 CSS does NOT do addition
+👉 It takes only the larger margin
+
+🧪 Example 1: Between two elements
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  margin-bottom: 40px;
+  background: lightcoral;
+}
+
+p {
+  margin-top: 20px;
+  background: lightblue;
+}
+</style>
+</head>
+<body>
+
+<h1>Heading</h1>
+<p>Paragraph below heading</p>
+
+</body>
+</html>
+💥 Result:
+
+Instead of 40px + 20px = 60px
+👉 You get 40px only
+
+🧪 Example 2: Parent and child collapse
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.parent {
+  background: lightyellow;
+}
+
+.child {
+  margin-top: 50px;
+  background: lightgreen;
+}
+</style>
+</head>
+<body>
+
+<div class="parent">
+  <div class="child">Child box</div>
+</div>
+
+</body>
+</html>
+💥 Result:
+
+The child’s top margin can “escape” the parent
+👉 spacing becomes 50px outside the parent, not inside
+
+🚫 When margin collapse DOES NOT happen
+Horizontal margins (left/right) ❌
+When parent has padding
+When parent has border
+With flexbox or grid
+When overflow: hidden/auto is used
+⚡ Quick mental image
+
+Vertical margins behave like neighbouring bubbles 🫧
+They don’t stack — they merge into one bigger space
+
+🧠 One-line memory trick
+
+👉 “Vertical margins don’t add, they negotiate.” -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  margin-bottom: 40px;
+  background: lightcoral;
+}
+
+p {
+  margin-top: 20px;
+  background: lightblue;
+}
+</style>
+</head>
+<body>
+
+<h1>Heading</h1>
+<p>Paragraph below heading</p>
+
+</body>
+</html>

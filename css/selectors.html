@@ -1,0 +1,237 @@
+ <!-- Element selector
+Targets all tags of a type
+HTML
+p {
+  color: blue;
+}
+👉 All <p> become blue
+🔹 Class selector (.)
+Targets elements with a class
+HTML
+.box {
+  background: yellow;
+}
+HTML
+<div class="box">Hello</div>
+👉 Multiple elements can share same class
+🔹 ID selector (#)
+Targets ONE unique element
+HTML
+#main {
+  font-size: 20px;
+}
+HTML
+<h1 id="main">Title</h1>
+👉 Only one ID per page (like a VIP pass 🎟️)
+⚡ 2. Grouping & Universal
+🔹 Group selector
+Apply same style to many
+HTML
+h1, h2, p {
+  color: green;
+}
+🔹 Universal selector (*)
+Targets EVERYTHING
+HTML
+* {
+  margin: 0;
+  padding: 0;
+}
+🧩 3. Combinator Selectors
+🔹 Descendant (space)
+HTML
+div p {
+  color: red;
+}
+👉 All <p> inside <div>
+🔹 Child (>)
+HTML
+div > p {
+  color: blue;
+}
+👉 Only direct children
+🔹 Adjacent sibling (+)
+HTML
+h1 + p {
+  color: purple;
+}
+👉 First <p> after <h1>
+🔹 General sibling (~)
+HTML
+h1 ~ p {
+  color: orange;
+}
+👉 All <p> after <h1>
+🎯 4. Attribute Selectors
+HTML
+input[type="text"] {
+  border: 2px solid black;
+}
+👉 Targets only text inputs
+Other examples:
+HTML
+a[target="_blank"] { color: red; }
+🧠 5. Pseudo-class Selectors
+They react to state 🎮
+HTML
+a:hover {
+  color: pink;
+}
+Other popular ones:
+:visited
+:active
+:first-child
+:nth-child(n)
+✨ 6. Pseudo-elements
+They style parts of elements 🪄
+HTML
+p::first-letter {
+  font-size: 30px;
+}
+HTML
+p::before {
+  content: "🔥 ";
+}
+🚀 Quick Cheat Sheet
+Type
+Example
+Meaning
+Element
+p
+all paragraphs
+Class
+.box
+reusable style
+ID
+#main
+unique element
+Universal
+*
+everything
+Attribute
+input[type="text"]
+specific attribute -->
+<!-- When you click and hold
+CSS
+button:active {
+  transform: scale(0.95);
+}
+🔗 :visited
+Already visited links
+CSS
+a:visited {
+  color: purple;
+}
+🧭 :link
+Unvisited links
+CSS
+a:link {
+  color: blue;
+}
+🧠 2. Form-related pseudo-classes
+✏️ :focus
+When you click inside input
+CSS
+input:focus {
+  border: 2px solid blue;
+}
+✅ :checked
+For checkboxes/radio buttons
+CSS
+input:checked {
+  outline: 2px solid green;
+}
+🚫 :disabled
+Disabled inputs
+CSS
+input:disabled {
+  background: #ccc;
+}
+🟢 :enabled
+Opposite of disabled
+CSS
+input:enabled {
+  background: white;
+}
+📍 3. Position-based pseudo-classes
+🥇 :first-child
+First child inside parent
+CSS
+p:first-child {
+  color: red;
+}
+🥈 :last-child
+Last child
+CSS
+p:last-child {
+  color: blue;
+}
+🎯 :nth-child(n)
+Selects specific child number
+CSS
+li:nth-child(2) {
+  color: green;
+}
+👉 Even/odd magic:
+CSS
+li:nth-child(even) {
+  background: #eee;
+}
+🧬 :nth-of-type(n)
+Works only on same type of element
+CSS
+p:nth-of-type(2) {
+  color: orange;
+}
+❌ :not()
+Excludes elements
+CSS
+p:not(.special) {
+  color: gray;
+}
+🧾 4. Structural pseudo-classes
+🏠 :empty
+No content inside
+CSS
+div:empty {
+  display: none;
+}
+🧩 :only-child
+Only child of parent
+CSS
+p:only-child {
+  font-weight: bold;
+}
+🎨 5. Pseudo-elements ( :: )
+These style parts of elements, not the whole element.
+✨ ::before
+Adds content before element
+CSS
+h1::before {
+  content: "🔥 ";
+}
+✨ ::after
+Adds content after element
+CSS
+h1::after {
+  content: " 🚀";
+}
+🔠 ::first-letter
+First letter styling
+CSS
+p::first-letter {
+  font-size: 40px;
+  color: red;
+}
+📖 ::first-line
+First line only
+CSS
+p::first-line {
+  font-weight: bold;
+}
+🧠 ::selection
+When user highlights text
+CSS
+p::selection {
+  background: yellow;
+}  -->

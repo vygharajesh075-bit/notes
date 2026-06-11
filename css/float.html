@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clear Example</title>
+
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1 { background: red; }
+.box2 { background: blue; }
+
+.clear-box {
+  clear: both;
+  background: green;
+  padding: 10px;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box box1">1</div>
+<div class="box box2">2</div>
+
+<div class="clear-box">
+  I am cleared. I will NOT sit beside floated elements.
+  I will always appear below them.
+</div>
+
+</body>
+</html>

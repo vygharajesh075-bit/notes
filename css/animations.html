@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations Full Demo</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 40px;
+            padding: 40px;
+        }
+
+        h1{
+            margin-bottom: 20px;
+        }
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .box{
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-weight: bold;
+        }
+
+        /* -------------------------------- */
+        /* 1. COLOR CHANGE */
+        /* -------------------------------- */
+
+        .color{
+            background-color: royalblue;
+
+            animation-name: colorChange;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes colorChange{
+
+            0%{
+                background-color: royalblue;
+            }
+
+            50%{
+                background-color: crimson;
+            }
+
+            100%{
+                background-color: royalblue;
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 2. MOVE */
+        /* -------------------------------- */
+
+        .move{
+            background-color: seagreen;
+
+            position: relative;
+
+            animation: moveBox 3s infinite;
+        }
+
+        @keyframes moveBox{
+
+            0%{
+                left: 0px;
+            }
+
+            50%{
+                left: 100px;
+            }
+
+            100%{
+                left: 0px;
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 3. ROTATE */
+        /* -------------------------------- */
+
+        .rotate{
+            background-color: purple;
+
+            animation: rotateBox 2s linear infinite;
+        }
+
+        @keyframes rotateBox{
+
+            from{
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(360deg);
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 4. SCALE */
+        /* -------------------------------- */
+
+        .scale{
+            background-color: hotpink;
+
+            animation: scaleBox 2s infinite;
+        }
+
+        @keyframes scaleBox{
+
+            0%{
+                transform: scale(1);
+            }
+
+            50%{
+                transform: scale(1.3);
+            }
+
+            100%{
+                transform: scale(1);
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 5. BORDER RADIUS */
+        /* -------------------------------- */
+
+        .circle{
+            background-color: orange;
+
+            animation: circleBox 3s infinite;
+        }
+
+        @keyframes circleBox{
+
+            0%{
+                border-radius: 0%;
+            }
+
+            50%{
+                border-radius: 50%;
+            }
+
+            100%{
+                border-radius: 0%;
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 6. OPACITY */
+        /* -------------------------------- */
+
+        .fade{
+            background-color: black;
+
+            animation: fadeBox 2s infinite;
+        }
+
+        @keyframes fadeBox{
+
+            0%{
+                opacity: 1;
+            }
+
+            50%{
+                opacity: 0.2;
+            }
+
+            100%{
+                opacity: 1;
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 7. MULTIPLE EFFECTS */
+        /* -------------------------------- */
+
+        .multi{
+            background-color: teal;
+
+            animation: multiEffect 4s infinite;
+        }
+
+        @keyframes multiEffect{
+
+            0%{
+                transform: rotate(0deg) scale(1);
+                background-color: teal;
+            }
+
+            50%{
+                transform: rotate(180deg) scale(1.3);
+                background-color: tomato;
+                border-radius: 50%;
+            }
+
+            100%{
+                transform: rotate(360deg) scale(1);
+                background-color: teal;
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 8. LOADING DOTS */
+        /* -------------------------------- */
+
+        .loading{
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot{
+            width: 20px;
+            height: 20px;
+            background-color: dodgerblue;
+            border-radius: 50%;
+
+            animation: bounce 0.6s infinite alternate;
+        }
+
+        .dot:nth-child(2){
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3){
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce{
+
+            from{
+                transform: translateY(0px);
+            }
+
+            to{
+                transform: translateY(-20px);
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 9. BUTTON ANIMATION */
+        /* -------------------------------- */
+
+        button{
+            padding: 15px 30px;
+            border: none;
+            background-color: crimson;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse{
+
+            0%{
+                transform: scale(1);
+            }
+
+            50%{
+                transform: scale(1.1);
+            }
+
+            100%{
+                transform: scale(1);
+            }
+
+        }
+
+        /* -------------------------------- */
+        /* 10. TEXT ANIMATION */
+        /* -------------------------------- */
+
+        .text{
+            font-size: 40px;
+            font-weight: bold;
+            color: darkblue;
+
+            animation: textGlow 2s infinite;
+        }
+
+        @keyframes textGlow{
+
+            0%{
+                letter-spacing: 2px;
+            }
+
+            50%{
+                letter-spacing: 10px;
+                color: crimson;
+            }
+
+            100%{
+                letter-spacing: 2px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>CSS Animations Demo ✨</h1>
+
+    <div class="container">
+
+        <div class="box color">
+            Color
+        </div>
+
+        <div class="box move">
+            Move
+        </div>
+
+        <div class="box rotate">
+            Rotate
+        </div>
+
+        <div class="box scale">
+            Scale
+        </div>
+
+        <div class="box circle">
+            Circle
+        </div>
+
+        <div class="box fade">
+            Fade
+        </div>
+
+        <div class="box multi">
+            Multi
+        </div>
+
+    </div>
+
+    <div class="loading">
+
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+    </div>
+
+    <button>
+        Animated Button
+    </button>
+
+    <div class="text">
+        CSS Animation
+    </div>
+
+</body>
+</html>

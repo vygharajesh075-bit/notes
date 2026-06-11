@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Filters Playground</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#eef2f7;
+    padding:40px;
+    text-align:center;
+}
+
+h1{
+    margin-bottom:30px;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.card{
+    width:240px;
+    background:white;
+    padding:10px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+
+    transition:0.4s ease;
+}
+
+.card p{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* ---------------- FILTER EFFECTS ---------------- */
+
+/* BLUR */
+.blur img:hover{
+    filter: blur(4px);
+}
+
+/* BRIGHTNESS */
+.brightness img:hover{
+    filter: brightness(150%);
+}
+
+/* CONTRAST */
+.contrast img:hover{
+    filter: contrast(200%);
+}
+
+/* GRAYSCALE */
+.grayscale img:hover{
+    filter: grayscale(100%);
+}
+
+/* SEPIA */
+.sepia img:hover{
+    filter: sepia(100%);
+}
+
+/* INVERT */
+.invert img:hover{
+    filter: invert(100%);
+}
+
+/* SATURATE */
+.saturate img:hover{
+    filter: saturate(300%);
+}
+
+/* HUE ROTATE */
+.hue img:hover{
+    filter: hue-rotate(180deg);
+}
+
+/* OPACITY */
+.opacity img:hover{
+    filter: opacity(50%);
+}
+
+/* DROP SHADOW */
+.shadow img:hover{
+    filter: drop-shadow(8px 8px 12px rgba(0,0,0,0.6));
+}
+
+/* MULTI FILTER */
+.multi img:hover{
+    filter: grayscale(100%) blur(2px) brightness(120%);
+}
+
+/* ---------------- BONUS: GLASS EFFECT ---------------- */
+
+.glass{
+    
+    position:relative;
+    overflow:hidden;
+}
+
+.glass::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    opacity:0;
+    transition:0.4s;
+}
+
+.glass:hover::after{
+    opacity:1;
+}
+
+/* ---------------- BONUS: OVERLAY EFFECT ---------------- */
+
+.overlay{
+    position:relative;
+}
+
+.overlay span{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+
+    transition:0.4s;
+}
+
+.overlay:hover img{
+    filter: brightness(60%);
+}
+
+ 
+
+</style>
+</head>
+
+<body>
+
+<h1>CSS Filters Full Demo ✨</h1>
+
+<div class="container">
+
+<div class="card blur">
+<img src="https://picsum.photos/id/1015/400/300">
+<p>Blur</p>
+</div>
+
+<div class="card brightness">
+<img src="https://picsum.photos/id/1016/400/300">
+<p>Brightness</p>
+</div>
+
+<div class="card contrast">
+<img src="https://picsum.photos/id/1018/400/300">
+<p>Contrast</p>
+</div>
+
+<div class="card grayscale">
+<img src="https://picsum.photos/id/1020/400/300">
+<p>Grayscale</p>
+</div>
+
+<div class="card sepia">
+<img src="https://picsum.photos/id/1024/400/300">
+<p>Sepia</p>
+</div>
+
+<div class="card invert">
+<img src="https://picsum.photos/id/1027/400/300">
+<p>Invert</p>
+</div>
+
+<div class="card saturate">
+<img src="https://picsum.photos/id/1035/400/300">
+<p>Saturate</p>
+</div>
+
+<div class="card hue">
+<img src="https://picsum.photos/id/1039/400/300">
+<p>Hue Rotate</p>
+</div>
+
+<div class="card opacity">
+<img src="https://picsum.photos/id/1043/400/300">
+<p>Opacity</p>
+</div>
+
+<div class="card shadow">
+<img src="https://picsum.photos/id/1050/400/300">
+<p>Drop Shadow</p>
+</div>
+
+<div class="card multi">
+<img src="https://picsum.photos/id/1060/400/300">
+<p>Multi Filter</p>
+</div>
+
+<!-- GLASS EFFECT -->
+<div class="card glass">
+<img src="https://picsum.photos/id/1074/400/300">
+<p>Glass Effect</p>
+</div>
+
+<!-- OVERLAY EFFECT -->
+<div class="card overlay">
+<img src="https://picsum.photos/id/1084/400/300">
+<span>VIEW</span>
+<p>Overlay Effect</p>
+</div>
+
+</div>
+
+</body>
+</html>

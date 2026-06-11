@@ -1,0 +1,387 @@
+<!-- transition: property duration timing-function delay;
+
+Example:
+
+button{
+    background-color: blue;
+    transition: background-color 2s ease 1s;
+}
+
+button:hover{
+    background-color: red;
+} -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions Full Demo</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #f4f4f4;
+            font-family: Arial, Helvetica, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+
+            padding: 40px;
+        }
+
+        h1{
+            margin-bottom: 20px;
+        }
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .box{
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* -------------------------------- */
+        /* 1. COLOR TRANSITION */
+        /* -------------------------------- */
+
+        .color{
+            background-color: royalblue;
+
+            transition: background-color 1s ease;
+        }
+
+        .color:hover{
+            background-color: crimson;
+        }
+
+        /* -------------------------------- */
+        /* 2. WIDTH TRANSITION */
+        /* -------------------------------- */
+
+        .width{
+            background-color: seagreen;
+
+            transition: width 1s ease;
+        }
+
+        .width:hover{
+               width: 250px;
+        }
+
+        /* -------------------------------- */
+        /* 3. HEIGHT TRANSITION */
+        /* -------------------------------- */
+
+        .height{
+            background-color: darkorange;
+
+            transition: height 1s ease;
+        }
+
+        .height:hover{
+            height: 250px;
+        }
+
+        /* -------------------------------- */
+        /* 4. BORDER RADIUS */
+        /* -------------------------------- */
+
+        .radius{
+            background-color: purple;
+
+            transition: border-radius 1s ease;
+        }
+
+        .radius:hover{
+            border-radius: 50%;
+        }
+
+        /* -------------------------------- */
+        /* 5. ROTATE */
+        /* -------------------------------- */
+
+        .rotate{
+            background-color: hotpink;
+
+            transition: transform 1s ease;
+        }
+
+        .rotate:hover{
+            transform: rotate(360deg);
+        }
+
+        /* -------------------------------- */
+        /* 6. SCALE */
+        /* -------------------------------- */
+
+        .scale{
+            background-color: teal;
+
+            transition: transform 0.5s ease;
+        }
+
+        .scale:hover{
+            transform: scale(1.2);
+        }
+
+        /* -------------------------------- */
+        /* 7. TRANSLATE */
+        /* -------------------------------- */
+
+        .move{
+            background-color: brown;
+
+            transition: transform 1s ease;
+        }
+
+        .move:hover{
+            transform: translateX(50px);
+        }
+
+        /* -------------------------------- */
+        /* 8. OPACITY */
+        /* -------------------------------- */
+
+        .opacity{
+            background-color: black;
+
+            transition: opacity 1s ease;
+        }
+
+        .opacity:hover{
+            opacity: 0.3;
+        }
+
+        /* -------------------------------- */
+        /* 9. MULTIPLE TRANSITIONS */
+        /* -------------------------------- */
+
+        .multi{
+            background-color: navy;
+
+            transition:
+                background-color 1s ease,
+                transform 1s ease,
+                border-radius 1s ease;
+        }
+
+        .multi:hover{
+            background-color: gold;
+            transform: scale(1.2) rotate(10deg);
+            border-radius: 50%;
+        }
+
+        /* -------------------------------- */
+        /* 10. BUTTON EFFECT */
+        /* -------------------------------- */
+
+        button{
+            padding: 15px 30px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+
+            transition:
+                background-color 0.5s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        button:hover{
+            background-color: crimson;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* -------------------------------- */
+        /* 11. CARD EFFECT */
+        /* -------------------------------- */
+
+        .card{
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+        .card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card h2{
+            margin-bottom: 10px;
+        }
+
+        .card p{
+            color: gray;
+        }
+
+        /* -------------------------------- */
+        /* 12. TIMING FUNCTIONS */
+        /* -------------------------------- */
+
+        .timing-container{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 80%;
+        }
+
+        .line{
+            width: 100px;
+            height: 50px;
+            background-color: dodgerblue;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: width 2s;
+        }
+
+        .timing-container:hover .ease{
+            width: 500px;
+            transition-timing-function: ease;
+        }
+
+        .timing-container:hover .linear{
+            width: 500px;
+            transition-timing-function: linear;
+        }
+
+        .timing-container:hover .easein{
+            width: 500px;
+            transition-timing-function: ease-in;
+        }
+
+        .timing-container:hover .easeout{
+            width: 500px;
+            transition-timing-function: ease-out;
+        }
+
+        .timing-container:hover .easeinout{
+            width: 500px;
+            transition-timing-function: ease-in-out;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>CSS Transition Full Demo ✨</h1>
+
+    <div class="container">
+
+        <div class="box color">
+            Color
+        </div>
+
+        <div class="box width">
+            Width
+        </div>
+
+        <div class="box height">
+            Height
+        </div>
+
+        <div class="box radius">
+            Radius
+        </div>
+
+        <div class="box rotate">
+            Rotate
+        </div>
+
+        <div class="box scale">
+            Scale
+        </div>
+
+        <div class="box move">
+            Move
+        </div>
+
+        <div class="box opacity">
+            Opacity
+        </div>
+
+        <div class="box multi">
+            Multiple
+        </div>
+
+    </div>
+
+    <button>
+        Hover Button
+    </button>
+
+    <div class="card">
+
+        <h2>Transition Card</h2>
+
+        <p>
+            Hover this card to see smooth scaling and shadow effect.
+        </p>
+
+    </div>
+
+    <h2>
+        Timing Functions
+    </h2>
+
+    <div class="timing-container">
+
+        <div class="line ease">
+            ease
+        </div>
+
+        <div class="line linear">
+            linear
+        </div>
+
+        <div class="line easein">
+            ease-in
+        </div>
+
+        <div class="line easeout">
+            ease-out
+        </div>
+
+        <div class="line easeinout">
+            ease-in-out
+        </div>
+
+    </div>
+
+</body>
+</html>

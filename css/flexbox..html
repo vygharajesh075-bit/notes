@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flexbox Full Demo</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* 🔥 FLEX CONTAINER (ALL MAIN PROPERTIES) */
+.container {
+  display: flex;
+
+  /* 🎯 direction */
+  flex-direction: row; /* try: column, row-reverse, column-reverse */
+
+  /* 🎯 wrapping */
+  flex-wrap: wrap; /* try: nowrap, wrap-reverse */
+
+  /* 🎯 main axis alignment */
+  justify-content: space-between; /* flex-start, center, flex-end, space-around, space-evenly */
+
+  /* 🎯 cross axis alignment */
+  align-items: center; /* stretch, flex-start, flex-end, baseline */
+
+  /* 🎯 multiple lines alignment (only works when wrap is enabled) */
+  align-content: space-between; /* flex-start, center, stretch, space-around */
+
+  /* 🎯 spacing */
+  gap: 10px;
+
+  height: 100vh;
+  background: #0f172a;
+  padding: 10px;
+}
+
+/* 🔷 FLEX ITEMS */
+.box {
+  width: 120px;
+  height: 120px;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 INDIVIDUAL ITEM PROPERTIES */
+
+/* grow = takes extra space */
+.box1 {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100px;
+  order: 2; /* changes position */
+  /* align-self: flex-start; overrides align-items */
+}
+
+/* medium behavior */
+.box2 {
+  flex: 2 1 150px; /* grow shrink basis shortcut */
+  order: 1;
+  align-self: flex-end;
+}
+
+/* fixed behavior */
+.box3 {
+  flex: 1 0 120px;
+  order: 3;
+  align-self: flex-end;
+}
+
+/* extra boxes */
+.box4 {
+  flex: 1;
+}
+.box5 {
+  flex: 1;
+}
+.box6 {
+  flex: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+  <div class="box box4">4</div>
+  <div class="box box5">5</div>
+  <div class="box box6">6</div>
+
+</div>
+
+</body>
+</html>

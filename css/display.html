@@ -1,0 +1,201 @@
+<!-- display” in CSS is like the stage manager of your webpage 🎭
+It decides how elements behave, sit, stack, or flow on the screen.
+
+Let’s walk through the main display types you’ll actually use (no fluff, just power 💥):
+
+🔹 1. display: block
+Takes full width
+Starts on a new line
+Stacks vertically
+
+📌 Examples: div, p, h1
+
+div {
+  display: block;
+}
+🔹 2. display: inline
+Stays in same line
+Takes only content width
+❌ Cannot set width/height properly
+
+📌 Examples: span, a
+
+span {
+  display: inline;
+}
+🔹 3. display: inline-block
+Inline (same line) ✅
+Block features (width/height) ✅
+
+🔥 Best of both worlds
+
+button {
+  display: inline-block;
+  width: 100px;
+}
+🔹 4. display: flex
+Creates a flex container
+Aligns items row or column
+Super powerful for layouts
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+💡 This is what modern websites mostly use.
+
+🔹 5. display: grid
+2D layout (rows + columns)
+Perfect for complex designs
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+🔹 6. display: none
+Hides element completely 🚫
+Removes it from layout
+div {
+  display: none;
+}
+🔹 7. display: inline-flex & inline-grid
+Same as flex/grid BUT stays inline
+.container {
+  display: inline-flex;
+}
+🔥 Quick Memory Trick
+
+Think of display like personalities:
+
+block → “I need full space 😤”
+inline → “I’ll just squeeze in 😌”
+inline-block → “Flexible but polite 😎”
+flex → “Let’s align things smartly 🧠”
+grid → “I organize everything perfectly 📦”
+none → “I disappear 🫥” -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Display Demo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        /* BLOCK */
+        header {
+            display: block;
+            background: #1e293b;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* INLINE */
+        nav a {
+            display: inline;
+            color: white;
+            text-align: center;
+            /* background-color: #38bdf8; */
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        /* INLINE-BLOCK */
+        .btn {
+            display: inline-block;
+            background: #38bdf8;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            
+        }
+
+        /* FLEX */
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .flex-item {
+            background: #334155;
+            padding: 20px;
+            width: 100px;
+            text-align: center;
+        }
+
+        /* GRID */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background: #475569;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* NONE */
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- BLOCK -->
+    <header>
+        <h1>Display Property Demo</h1>
+    </header>
+
+    <!-- INLINE -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- INLINE-BLOCK -->
+    <section>
+        <div class="btn">Button 1</div>
+        <div class="btn">Button 2</div>
+    </section>
+
+    <!-- FLEX -->
+    <section class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid-container">
+        <div class="grid-item">A</div>
+        <div class="grid-item">B</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">D</div>
+        <div class="grid-item">E</div>
+        <div class="grid-item">F</div>
+    </section>
+
+    <!-- NONE -->
+    <div class="hidden">
+        You should not see this 👀
+    </div>
+
+</body>
+</html>
